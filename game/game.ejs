@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Copter Rescue | NFT Game</title>
+    <meta charset="UTF-8" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    /> -->
+    <link rel="icon" href="../img/Enemy06.png" sizes="16x16 32x32" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/game.css" />
+  </head>
+  <body>
+    <div class="game-background"></div>
+   <div class="game-content">
+    <nav class="mini-navbar-left">
+      <div class="mini-navbar-left-contain">
+          <div class="mini-navbar-left-link"><a href=""><img src="../img/I_Chest01.png"/><span>Copters</span></a></div>
+          <div class="mini-navbar-left-link"><a href=""><img src="../img/S_Dagger06.png"/><span>Survival</span></a></div>
+          <div class="mini-navbar-left-link"><a href=""><img src="../img/S_Dagger05.png"/><span>Adventure</span></a></div>
+      </div>
+    </nav>
+    <div class="game-app-content">
+      <div id="game-app">
+        <div class="game-container">
+          <canvas id="webgl"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="/game/js/adventure/render.js"></script>
+  </body>
+</html>

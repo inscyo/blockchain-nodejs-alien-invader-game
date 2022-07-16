@@ -1,0 +1,605 @@
+:root {
+  --mainWidth: 1100px;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid green !important; */
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: #11131b;
+}
+body::-webkit-scrollbar-thumb {
+  background: #282b2f;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
+#app {
+  box-sizing: border-box;
+  background-color: #456461;
+  /* box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 30%); */
+}
+#app-game {
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
+.page-container {
+  width: var(--mainWidth);
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  display: block;
+  padding: 10px;
+}
+.page-navbar-container {
+  height: auto;
+  box-sizing: border-box;
+  padding: 10px 20px 30px 20px;
+  background-color: #456461;
+  box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 30%);
+  position: relative;
+}
+.page-navbar {
+  width: var(--mainWidth);
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  margin: 0px auto;
+}
+.right-nav {
+  flex: 1;
+  display: flex;
+  width: auto;
+}
+.left-nav {
+  flex: 1;
+}
+.desktop-menu {
+  display: block;
+}
+.menu-mobile-nav {
+  flex: 1;
+  position: absolute;
+  right: -20px;
+  padding: 20px;
+  top: -10px;
+  display: none;
+  cursor: pointer;
+}
+.menu-mobile-nav span {
+  font-size: 40px;
+  color: #fff;
+}
+.right-nav ul {
+  display: flex;
+  position: relative;
+  top: 5px;
+  position: absolute;
+  left: 0px;
+}
+.right-nav ul li {
+  list-style: none;
+  padding: 15px 0px 20px 35px;
+}
+.right-nav ul li a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+.right-nav ul li a:hover {
+  text-decoration: underline;
+}
+.right-nav img {
+  width: 48px;
+  height: 42px;
+  position: relative;
+  top: 10px;
+}
+.right-nav span {
+  font-size: 25px;
+  font-family: "PatchyRobots";
+  color: #faf9f9;
+  font-weight: 600;
+  display: none;
+  margin: 10px;
+  position: relative;
+  top: 0px;
+}
+.left-nav ul {
+  display: flex;
+  position: relative;
+  top: 5px;
+  position: absolute;
+  right: 0px;
+}
+.left-nav ul li {
+  list-style: none;
+  padding: 15px 0px 20px 35px;
+}
+.left-nav ul li a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+}
+.left-nav ul li a:hover {
+  text-decoration: underline;
+}
+.navbar-button {
+  width: auto;
+  border: 0px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  background: #e2c130;
+  box-shadow: 0px 4px 0px #90803a;
+  border-radius: 28px;
+  position: relative;
+  top: -15px;
+}
+.mobile-menu {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 300px;
+  background-color: #3a4f4d;
+  position: absolute;
+  left: -500px;
+  transition: 0.3s;
+  z-index: 9999;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.mobile-menu ul {
+  position: relative;
+  box-sizing: border-box;
+  left: -25px;
+}
+.mobile-menu ul li {
+  list-style: none;
+  padding: 0px 20px 0px 15px;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.mobile-menu ul li a {
+  color: #27d4ff;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  font-weight: 900;
+}
+.mobile-menu ul li a:hover {
+  text-decoration: underline;
+}
+.page-landing {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin: 0 auto 10vh auto;
+  display: block;
+  overflow: hidden;
+  background-image: url("../img/game-background.png");
+  background-size: 100% 100%;
+  position: relative;
+}
+.page-landing::before {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.game-logo {
+  width: 600px;
+  height: auto;
+  margin: 10vh auto 0px auto;
+  display: block;
+  position: relative;
+}
+.page-landing-buttons {
+  box-sizing: border-box;
+  margin-top: 12vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.page-landing-button-play {
+  box-sizing: border-box;
+  margin-top: 2vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.page-landing-buttons button {
+  width: auto;
+  border: 0px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+  margin: 50px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  background: #e2c130;
+  box-shadow: 0px 4px 0px #90803a;
+  border-radius: 28px;
+  position: relative;
+}
+
+.page-landing h3 {
+  font-family: "PatchyRobots";
+  font-size: 85px;
+  color: #ffc635;
+  text-align: center;
+  margin-top: 40px;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+.page-landing p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.5em;
+}
+.page-landing-gameplay {
+  width: 700px;
+  height: auto;
+  border-radius: 5px;
+  margin: 45px auto;
+  display: block;
+}
+.page-gamemodes {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10vh;
+  padding: 15px;
+}
+.page-gamemodes h3 {
+  font-family: "PatchyRobots";
+  font-size: 35px;
+  color: #ffc635;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+  line-height: 1.5em;
+}
+.page-gamemodes .page-gamemodes-notice {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+.gamemodes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamemodes-background {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  height: auto;
+  background-color: #3a4f4d;
+  padding: 30px 20px 20px 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 30px 20px 30px 20px;
+}
+.gamemodes-background img {
+  display: block;
+  margin: 0 auto;
+}
+.gamemodes-details {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.gamemodes div:nth-child(1) img {
+  width: 90px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.gamemodes div:nth-child(2) img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.gamemodes div div h4 {
+  font-family: "PatchyRobots";
+  font-size: 20px;
+  color: #27d4ff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.gamemodes div p {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5em;
+}
+.nfts {
+  width: 700px;
+  position: relative;
+  margin: 20px auto;
+  display: block;
+  z-index: 999;
+}
+.tokenomicspng {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  left: -5px;
+  top: 20px;
+}
+.partners {
+  margin: 0px 40px 40px 40px;
+  width: 100%;
+}
+.nftspowerups {
+  width: 400px;
+  margin: 0px auto;
+  display: block;
+}
+.roadmap {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.roads {
+  width: 100%;
+  height: auto;
+  flex: 1;
+  margin: 15px;
+  position: relative;
+}
+.roads h4 {
+  font-family: "PatchyRobots";
+  font-size: 17px;
+  color: #27d4ff;
+  margin-bottom: 10px;
+}
+.roads p {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.5em;
+}
+.team-details {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.team-data {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.team-data .team-profile {
+  flex: 1;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 auto;
+  display: block;
+}
+.team-data h4 {
+  font-family: "PatchyRobots";
+  font-size: 17px;
+  color: #27d4ff;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.team-data p {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.page-question-details-contain {
+  width: 81%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+.page-question-details {
+  padding: 15px;
+  background-color: #5d9894;
+  position: relative;
+  cursor: pointer;
+}
+.page-question-details h5 {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  color: #fff;
+}
+.page-question-details span {
+  position: absolute;
+  right: 0px;
+  color: #fff;
+  top: 5px;
+  margin: 10px;
+}
+.page-question-notice {
+  width: 100%;
+  height: auto;
+  background-color: #707017;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #fff;
+  padding: 15px;
+  border-top: 1px solid #42424257;
+  display: none;
+}
+.page-footer {
+  width: 100%;
+  padding: 10px;
+  margin-top: 50px;
+}
+.page-footer p:nth-child(1) {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #fff;
+  line-height: 2em;
+  text-align: center;
+}
+.page-footer p:nth-child(3) {
+  font-family: "PatchyRobots";
+  font-size: 17px;
+  color: #d9ad28;
+  line-height: 2em;
+  text-align: center;
+}
+
+@media screen and (max-width: 1170px) {
+  .page-navbar {
+    width: 100%;
+    display: block;
+  }
+  .right-nav {
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    top: -5px;
+    position: relative;
+    left: 0px;
+  }
+  .right-nav span {
+    top: 5px;
+  }
+  .desktop-menu {
+    display: none;
+  }
+  .menu-mobile-nav {
+    display: block;
+    left: -20px;
+  }
+  .page-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .nfts {
+    width: 80%;
+  }
+  .game-logo {
+    width: 80%;
+  }
+  .partners {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .partners {
+    width: 130px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .partners-details {
+    display: block !important;
+  }
+  .partners {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .nfts {
+    width: 100%;
+  }
+  .game-logo {
+    width: 100%;
+  }
+  .gamemodes {
+    display: block;
+  }
+  .gamemodes-background {
+    width: 100%;
+    margin: 30px 0px 30px;
+  }
+  .roadmap {
+    width: 100%;
+    display: block;
+  }
+  .roads {
+    width: 100%;
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 40px;
+  }
+  .roads p {
+    width: 100%;
+  }
+  .team-details {
+    display: block;
+  }
+  .team-data {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 450px) {
+  /* .menu-mobile-nav {
+    position: relative;
+    right: 0px;
+    padding: 0px;
+    top: 0px;
+    text-align: center;
+  } */
+  .page-question-details {
+    width: 100%;
+  }
+}

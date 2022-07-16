@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$SARC Presale</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" href="./img/coin.png" />
+    <link rel="stylesheet" href="./css/presale.css" />
+    <%- include('./template/header.ejs'); %>
+  </head>
+  <body id="app">
+    <canvas id="space"></canvas>
+       <div class="token-presale">
+
+       </div>
+       <script>
+           window.onload = function(){
+            var screenH;
+  var screenW;
+  var stars = [];
+
+  screenH = innerHeight;
+  screenW = innerWidth;
+  var canvas = document.querySelector("#space");
+
+  canvas.setAttribute("height", screenH);
+  canvas.setAttribute("width", screenW);
+  var context = canvas.getContext("2d");
+
+  for (var i = 0; i < 500; i++) {
+    var x = Math.round(Math.random() * screenW);
+    var y = Math.round(Math.random() * screenH);
+    var length = 1 + Math.random() * 1.5;
+    var opacity = Math.random();
+    var star = new Star(x, y, length, opacity);
+    stars.push(star);
+  }
+
+  function Star(x, y, length, opacity) {
+    this.x = parseInt(x);
+    this.y = parseInt(y);
+    this.length = parseInt(length);
+    this.opacity = opacity;
+    this.factor = 1;
+    this.increment = Math.random() * 0.03;
+
+    this.draw = function () {
+      context.rotate((Math.PI * 1) / 10);
+      context.save();
+      context.translate(this.x, this.y);
+      if (this.opacity > 1) {
+        this.factor = -1;
+      } else if (this.opacity <= 0) {
+        this.factor = 1;
+        this.x = Math.round(Math.random() * screenW);
+        this.y = Math.round(Math.random() * screenH);
+      }
+      this.opacity += this.increment * this.factor;
+      context.beginPath();
+      for (var i = 5; i--; ) {
+        context.lineTo(0, this.length);
+        context.translate(0, this.length);
+        context.rotate((Math.PI * 2) / 10);
+        context.lineTo(0, -this.length);
+        context.translate(0, -this.length);
+        context.rotate(-((Math.PI * 6) / 10));
+      }
+      context.lineTo(0, this.length);
+      context.closePath();
+      context.fillStyle = "rgba(255, 255, 200, " + this.opacity + ")";
+      context.shadowBlur = 5;
+      context.shadowColor = "#fff";
+      context.fill();
+      context.restore();
+    };
+  }
+  (function animate() {
+    requestAnimationFrame(animate);
+    context.clearRect(0, 0, screenW, screenH);
+    for (var i = stars.length; i--; ) stars[i].draw(context);
+  })();
+           }
+       </script>
+  </body>
+  </html>

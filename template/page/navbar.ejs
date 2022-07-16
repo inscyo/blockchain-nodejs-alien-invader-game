@@ -1,0 +1,28 @@
+<div class="page-navbar-container">
+    <nav class="page-navbar">
+        <div class="right-nav">
+            <img src="img/Enemy06.png" />
+            <span>CopterRescue</span>
+        </div>
+        <div class="left-nav desktop-menu">
+            <ul>
+                <%  for (var link of menu){ %>
+                    <li><a href="<%= link.href %>"><%= link.name %></a></li>
+                <% } %>
+                <li><button class="navbar-button">BUY $SARC</button></li>
+            </ul>
+        </div>
+        <div class="menu-mobile-nav">
+            <span class="material-icons mobile-menu-toggle">menu</span>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <%  for (var link of menu){ %>
+                <li><a href="<%= link.href %>"><%= link.name %></a></li>
+            <% } %>
+            <br />
+            <li><button class="navbar-button">BUY $SARC</button></li>
+        </ul>
+    </div>
+</div>
